@@ -4,37 +4,37 @@ import {
   Link
 } from "react-router-dom";
 
-export class Navbar extends Component {
+const Navbar = () => {
 
-  constructor(){
-    super();
-    this.state={
-      mode : 'light',
-      fontMode : 'dark'
-    }
-  }
+  // constructor(){
+  //   super();
+  //   this.state={
+  //     mode : 'light',
+  //     fontMode : 'dark'
+  //   }
+  // }
 
-  changeMode =()=>{
+  // changeMode =()=>{
     
-    if(this.state.mode === 'light'){
-      this.setState({
-        mode : 'dark',
-        fontMode : 'light'
-      })
-    }
-    else{
-      this.setState({
-        mode : 'light',
-        fontMode : 'dark'
-      })
-    }
-  }
-  render() {
+  //   if(this.state.mode === 'light'){
+  //     this.setState({
+  //       mode : 'dark',
+  //       fontMode : 'light'
+  //     })
+  //   }
+  //   else{
+  //     this.setState({
+  //       mode : 'light',
+  //       fontMode : 'dark'
+  //     })
+  //   }
+  // }
+  
 
     return (
         <>
       <div>
-            <nav className={`navbar navbar-expand-lg navbar-${this.state.mode} bg-${this.state.mode} .bg-dark`} >
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark .bg-dark fixed-top" >
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">NewsMonkey</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,15 +55,15 @@ export class Navbar extends Component {
                 </ul>
                 </div>
             </div>
-            <div class="form-check form-switch">
+            {/* <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={this.changeMode}/>
               <label class={`form-check-label text-${this.state.fontMode}`} htmlFor="flexSwitchCheckDefault" onClick={this.changeMode}>Dark mode</label>
-</div>
+</div> */}
             </nav>
       </div>
       </>
     )
-  }
+  
 }
 
 export default Navbar
